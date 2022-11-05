@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: django-was
-        image: 739362892804.dkr.ecr.ap-northeast-2.amazonaws.com/django:v1
+        image: 739362892804.dkr.ecr.ap-northeast-2.amazonaws.com/django:v2
         ports:
         - containerPort: 8000
       nodeSelector:
