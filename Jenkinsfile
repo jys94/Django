@@ -14,7 +14,7 @@ node {
 
     docker.withRegistry('https://739362892804.dkr.ecr.ap-northeast-2.amazonaws.com', 'ecr:ap-northeast-2:jenkins-ecr-access-credential') {
       app = docker.build('739362892804.dkr.ecr.ap-northeast-2.amazonaws.com/django')
-      app.push('v${env.BUILD_NUMBER}')
+      app.push("v${env.BUILD_NUMBER}")
     }
   }
   stage('k8s deploy') {
