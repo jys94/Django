@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block con %}
+
+
+<h1>{{ user }}'s profile</h1>
+
+USERNAME <input type="text" value = "{{user.username}}" disabled><br><br>
+EMAIL <input type="text" value = "{{user.email}}" disabled><br><br>
+FIRST NAME <input type="text" value = "{{user.first_name}}"disabled><br><br>
+LAST NAME <input type="text" value = "{{user.last_name}}" disabled><br><br>
+<a href="{% url 'acc:index' %}"><button>HOME</button></a>
+<a href="{% url 'acc:update' %}"><button>MOD</button></a>
+<a href="{% url 'acc:delete' %}"><button>DEL</button></a>
+
+{% endblock %}

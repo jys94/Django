@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block con %}
+    <div class="container mt-5 mb-5" style="font-size: 20px; font-weight: bold;">
+        <h1><b>게시물 작성</b></h1>
+        <form method="post" action = "{% url 'live:create' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3 mt-5">
+                <label class="form-label">제품명</label>
+                <input type="text" name="prod" class="form-control">
+            </div>
+            <div id = "container" class="mb-3 mt-5">
+                <label class="form-label">카테고리</label>                
+                <div class="col-lg-2">
+                    <select class="form-select mb-3" name="cate" aria-label=".form-select-lg example">
+                        {% for i in cate %} 
+                        <option name="cate" > {{ i }}</option>
+                        {% endfor %}
+                        <!-- <option value=f"sel" {% if cate == "wri" %} selected {% endif %}>작성자</option>
+                        <option value="con" {% if cate == "con" %} selected {% endif %}>내용</option> -->
+                    </select>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">제품 이미지</label>
+                <input type="file" name="pic" class="form-control" >
+            <div class="mb-3">
+                <label class="form-label">SELLER</label>
+                <input type="text" class="form-control" value="{{ user }}" disabled>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">가격</label>
+                <textarea class="form-control" name="price" style="height: 10px;"></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">간략한 소개(20자 이내)</label>
+                <textarea class="form-control" name="scon" style="height: 150px;"></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">제품 소개</label>
+                <textarea class="form-control" name="con" style="height: 150px;"></textarea>
+            </div>
+            <div class="text-end mt-3">
+                <button class="btn btn-dark">생성</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

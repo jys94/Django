@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block con %}
+<br><br>
+
+<div class="text-center">
+    <h1 class="display-10 fw-bold">회원 가입</h1><br>
+
+    <form method="post">
+        {% csrf_token %}
+        ID : <input type="text" name="uname" placeholder="input your ID"><br><br>
+        PW : <input type="password" name="upass" placeholder="input your P/W"><br><br>
+        Email : <input type="text" name="umail" placeholder="example@example.com"><br><br>
+        이름 : <input type="text" name="fname" placeholder="길동"><br><br>
+        성 : <input type="text" name="lname" placeholder="홍"><br><br>
+        <button class="btn btn-dark btn-secondary" style="font-weight: bold;">가입</button>
+    </form>
+</div>
+{% endblock %}

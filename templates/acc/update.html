@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block con %}
+
+<h1>{{ user }}'s UPDATE PAGE</h1>
+
+<form method="post">
+    {% csrf_token %}
+USERNAME <input type="text" name="uname" value="{{ user }}" disabled><br><br>
+PASSWORD <input type="password" name="upass"><br><br>
+EMAIL <input type="text" name="umail" value="{{ user.email }}"><br><br>
+FIRST_NAME<input type="text" name="fname" value="{{ user.first_name }}"><br><br>
+LAST_NAME<input type="text" name="lname" value="{{ user.last_name }}"><br><br>
+
+<button class="btn btn-dark btn-secondary" style="font-weight: bold;">등록</button>
+</form>
+
+{% endblock %}
