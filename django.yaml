@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
       - name: django-was
-        image: 739362892804.dkr.ecr.ap-northeast-2.amazonaws.com/django:v2
+        image: 117612009356.dkr.ecr.ap-northeast-2.amazonaws.com/django:v2
         ports:
         - containerPort: 8000
       nodeSelector:
-        alpha.eksctl.io/nodegroup-name: nodegroup-was
+        eks.amazonaws.com/nodegroup: nodegroup-was
