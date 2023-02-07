@@ -12,8 +12,8 @@ node {
     sh 'rm ~/.dockercfg || true'
     sh 'rm ~/.docker/config.json || true'
 
-    docker.withRegistry('https://739362892804.dkr.ecr.ap-northeast-2.amazonaws.com', 'ecr:ap-northeast-2:jenkins-ecr-access-credential') {
-      app = docker.build('739362892804.dkr.ecr.ap-northeast-2.amazonaws.com/django')
+    docker.withRegistry('https://117612009356.dkr.ecr.ap-northeast-2.amazonaws.com', 'ecr:ap-northeast-2:jenkins-ecr-access-credential') {
+      app = docker.build('117612009356.dkr.ecr.ap-northeast-2.amazonaws.com/django')
       app.push("v${env.BUILD_NUMBER}")
     }
   }
